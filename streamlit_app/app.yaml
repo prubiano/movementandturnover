@@ -1,0 +1,11 @@
+command: ['streamlit', 'run', 'app.py']
+
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql-warehouse        # matches the Resource key in the UI exactly
+  - name: HRA_CATALOG
+    value: "dd_hra1"
+  - name: HRA_SCHEMA
+    value: "datalake_curated2_hranalytics"
+  - name: STREAMLIT_GATHER_USAGE_STATS
+    value: "false"
