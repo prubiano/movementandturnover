@@ -1,0 +1,1 @@
+# eNPS Survey App\n\nThis is a simple eNPS (Employee Net Promoter Score) survey app.\n\n## Features\n- Collect employee feedback\n- Calculate eNPS score\n- Simple user interface\n\n## Usage\n1. Clone the repository\n2. Install the required dependencies\n3. Run the application\n\n## Dependencies\n- Flask\n- SQLAlchemy\n\n## License\nThis project is licensed under the MIT License.
