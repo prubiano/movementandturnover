@@ -1,16 +1,16 @@
-Movement & Turnover Monitor
-===========================
-Databricks App — HR Analytics
-Source views: v_fact_movement_hranalytics, v_dim_org_structure_hranalytics
+#Movement & Turnover
 
-Deploy in Databricks Apps. Requires:
-  - databricks-sdk
-  - streamlit
-  - plotly
-  - pandas
+#Databricks App - HR Analytics
+#Source views: v_fact_movement_hranalytics, v_dim_org_structure_hranalytics
 
-Connection uses the workspace's built-in OAuth — no API key needed.
-Set DATABRICKS_WAREHOUSE_ID in app.yaml or Databricks App environment variables.
+#Deploy in Databricks Apps. Requires:
+#  - databricks-sdk
+#  - streamlit
+#  - plotly
+#  - pandas
+
+#Connection uses the workspaces built-in OAuth - no API key needed.
+#Set DATABRICKS_WAREHOUSE_ID in app.yaml or Databricks App environment variables.
 
 import os
 import streamlit as st
@@ -22,7 +22,7 @@ from databricks.sdk.config import Config
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Movement & Turnover Monitor",
+    page_title="Movement & Turnover",
     page_icon="👥",
     layout="wide",
 )
@@ -43,7 +43,7 @@ MOVEMENT_COLORS = {
     "other":           COLOR_OTHER,
 }
 
-# ── Catalog / schema — edit here or set as env vars ───────────────────────────
+# ── Catalog / schema - edit here or set as env vars ───────────────────────────
 CATALOG = os.getenv("HRA_CATALOG", "dd_hra1")
 SCHEMA  = os.getenv("HRA_SCHEMA",  "datalake_curated2_hranalytics")
 WH_ID   = os.getenv("DATABRICKS_WAREHOUSE_ID", "")  # set in Databricks App config
@@ -199,12 +199,12 @@ def fmt_sql(template: str, **kwargs) -> str:
         **kwargs,
     )
 
-# ── Sidebar — filters ─────────────────────────────────────────────────────────
+# ── Sidebar - filters ─────────────────────────────────────────────────────────
 
 with st.sidebar:
     st.markdown("## Filters")
 
-    # Date range — load min/max once
+    # Date range - load min/max once
     @st.cache_data(ttl=3600, show_spinner=False)
     def load_date_range():
         return query(SQL_DATE_RANGE)
