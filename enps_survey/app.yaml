@@ -1,0 +1,17 @@
+[theme]
+  primaryColor="#F39C12"
+  backgroundColor="#FFFFFF"
+  secondaryBackgroundColor="#F7F7F7"
+  textColor="#333333"
+  font="sans serif"
+
+[server]
+  enableCORS=false
+
+[runner]
+  magicEnabled=false
+  allow_remote_access=true
+
+[cache]
+  enable=false
+
